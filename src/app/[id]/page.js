@@ -5,6 +5,12 @@ import Image from "next/image";
 import styles from "./individual.module.css";
 import exampleimg from "../../../src/risingphoto.PNG";
 import "./global.css";
+import Video from "@/component/Video";
+import VideowithResearch from "@/component/VideowithResearch";
+import PictureParagraph from "@/component/PictureParagraph";
+import ParagraphPicture from "@/component/ParagraphPicture";
+import VerticleParagraphPicture from "@/component/VerticleParagraphPicture";
+import VerticlePictureParagraph from "@/component/VerticlePictureParagraph,";
 
 export default function Projectindividual() {
   const menuon = (event) => {
@@ -22,6 +28,14 @@ export default function Projectindividual() {
   };
   return (
     <html style={{ overflowY: "scroll" }}>
+
+    {/* <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet"/> */}
       <body>
         <div className={styles.screen}>
           <section className="styles.section">
@@ -51,8 +65,14 @@ export default function Projectindividual() {
             </div>
           </section>
           <section>
-            <div className={styles.video}></div>
+           <Video></Video>
+           <VideowithResearch></VideowithResearch>
+           <PictureParagraph></PictureParagraph>
+           <ParagraphPicture></ParagraphPicture>
+           <VerticleParagraphPicture></VerticleParagraphPicture>
+           <VerticlePictureParagraph></VerticlePictureParagraph>
           </section>
+
         </div>
       </body>
     </html>

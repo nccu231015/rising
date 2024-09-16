@@ -142,7 +142,7 @@ export default function Projects() {
   return (
     <div className={styles.screen}>
       <ShaderGradientCanvas
-        importedFiber={{ ...fiber, ...drei, ...reactSpring }}
+        importedfiber={{ ...fiber, ...drei, ...reactSpring }}
         style={{
           position: "absolute",
           top: 0,
@@ -151,7 +151,7 @@ export default function Projects() {
       >
         <ShaderGradient
           control="query"
-          urlString="https://www.shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%23fffcfc&bgColor2=%23fafff7&brightness=1.2&cAzimuthAngle=240&cDistance=4.4&cPolarAngle=130&cameraZoom=14.5&color1=%23ffd4cc&color2=%23ff6000&color3=%23ffefe0&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=40&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=2.1&positionX=0.5&positionY=0.3&positionZ=0.2&range=enabled&rangeEnd=37.5&rangeStart=25.5&reflection=0.1&rotationX=20&rotationY=0&rotationZ=140&shader=defaults&type=sphere&uAmplitude=2.4&uDensity=0.8&uFrequency=0&uSpeed=0.1&uStrength=0.5&uTime=25.5&wireframe=false"
+          urlString="https://www.shadergradient.co/customize?animate=on&axesHelper=off&brightness=3.7&cAzimuthAngle=240&cDistance=160&cPolarAngle=130&cameraZoom=16&color1=%23ffd4cc&color2=%23ff6000&color3=%23ffefe0&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=5&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=20&positionX=0.2&positionY=0.3&positionZ=0.1&range=enabled&rangeEnd=37.5&rangeStart=25.5&reflection=0.1&rotationX=20&rotationY=50&rotationZ=140&shader=defaults&toggleAxis=true&type=sphere&uAmplitude=2.4&uDensity=0.8&uFrequency=0&uSpeed=0.1&uStrength=0.5&uTime=25.5&wireframe=false&zoomOut=false&noiseStrength=0.2"
         />
       </ShaderGradientCanvas>
       <div className={styles.menuicon} onClick={menuon}>
@@ -180,10 +180,10 @@ export default function Projects() {
       </div>
 
       <div className={styles.ball}></div>
-      <div className={styles.lines}></div>
+      {/* <div className={styles.lines}></div> */}
       <div className={styles.title}>design by Rising Lai</div>
       <div className={styles.menu}>
-        <div className={styles.projectsMenu}>P</div>
+        <div className={styles.projectsMenu}  style={{ opacity: 0 }}>P</div>
         <div className={styles.ContactMenu}>C</div>
       </div>
       <div
