@@ -13,7 +13,7 @@ export default function Images(props){
                 fill
                 objectFit="cover"></Image>
         </div>
-            <div className={style.paragraph} dangerouslySetInnerHTML={{ __html: props.Description }}></div>
+            <div className={style.paragraph} dangerouslySetInnerHTML={{ __html: props.description }}></div>
         </div>
     )
 }
