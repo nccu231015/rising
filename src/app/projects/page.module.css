@@ -3,7 +3,97 @@
     height: 100vh;
     background-color: rgba(0,0,0,0);
     animation: off 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: absolute;
+    top: 0;
 
+}
+
+.phonecontactmenu{
+  display: none;
+}
+
+.contact{
+  display: none;
+  position: absolute;
+  background: rgba(141, 140, 140, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
+  border-radius: 15px; /* Optional rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 400;
+}
+.ballcontact{
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  /* border-radius: 80%; */
+  /* background:rgb(252,81,12); */
+  background: radial-gradient(circle at 100% 50%,rgba(252, 81, 12, 0.9080225840336135) 24%,rgba(239,77,11,0.3113839285714286) 42.3%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%,-50%);
+  /* box-shadow: 0 0 15px 10px rgba(0,0,0,0.1); */
+  /* border: transparent */
+  /* animation: 10s infinite ease ballbreathing; */
+  transform-origin: 0 50%
+}
+
+.ballcontact .info{
+  font-family: 'Martel',sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  left: 80%;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.element + .element{
+  margin-top: 2rem;
+}
+
+.logocontainer{
+  display: flex;
+}
+
+.logo + .logo{
+  margin-left: 1rem;
+}
+
+.logo{
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: black;
+  /* padding: 2rem; */
+  color: white;
+}
+
+@keyframes on {
+  0%{
+    opacity: 0
+  }
+  100%{
+    opacity: 1
+  }
+}
+
+.offcontact{
+  animation: on 1s reverse;
+}
+.oncontact{
+  animation: on 1s ease;
 }
 
 @keyframes off {
@@ -13,6 +103,13 @@
   100%{
     background-color: rgba(0,0,0,0);
   }
+}
+
+
+.imagecontainer{
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
 }
 
 
@@ -112,6 +209,29 @@
     }
   }
 
+  @keyframes backgroundHome {
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1
+      }
+    
+  }
+  .backhome{
+    animation: backgroundHome 1s ease
+  }
+  .main{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    background: rgba(0,0,0,1);
+    z-index: 199;
+  }
 
 .photoanimationdown{
     animation: 0.5s ease photoanimationd;
@@ -133,15 +253,13 @@
     background: linear-gradient(to left,rgba(252, 80, 12, 0.605) 5%,rgba(247, 172, 142, 0.143) 15%, rgba(0, 0, 0, 0) 100%);
 }
 
+
 .image{
     opacity: 0;
-    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
-    width: 27vw;
-    height: 30vh;
     border-radius: 8px;
     /* border: 1px solid black; */
     transition: 0.1s ease;
@@ -334,6 +452,8 @@
       cursor: pointer;
       width: 7%;
       height: 20%;
+      position: relative;
+      top: -20%;
       /* border: 1px solid black; */
       display: flex;
       align-items: center;
@@ -362,11 +482,20 @@
         /* border: 1px solid black; */
     }
 
+    .phoneimagecontainer{
+      margin: 10% 5vw;
+      flex: 0 0 90vw; /* Each container takes full viewport width */
+  height: 80%; /* Ensure it takes full height of parent */
+  position: relative;
+  z-index: 99
+    }
+
     .imagephone{
-        object-fit: cover;
-        border-radius: 8px;
-        height: 80%;
-        width: 90%;
+      border-radius: 8px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+        
     }
     .upgradient{
         width: 100%;
@@ -430,5 +559,62 @@
   }
   .sphere_menu{
     display: none
+  }
+
+  .phoneimagecarasoul{
+    z-index: 100;
+    display: flex;
+  overflow-x: scroll;
+  overflow-y: clip;
+  width: 100vw;
+  height: 100%; /* Ensure it takes full height of parent */
+  scroll-snap-type: x mandatory; /* For smoother scroll snap */
+  }
+
+  .logo{
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .logocontainer{
+    position: relative;
+    left: 6px
+  }
+
+  .contactitems{
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .elementphone{
+    position: relative;
+    top: -5rem;
+  }
+
+  .sayhi{
+    position: relative;
+    left: -6px;
+    font-size: 7rem;
+    color: transparent;
+    -webkit-text-stroke: #DE5A24 1px;
+    font-weight: 900;
+    font-family: "Martel", sans-serif;
+    line-height: 8rem;
+  }
+
+  .phonecontactmenu{
+    display: inline-block;
+    transition: 1s ease;
+    transform: translate(50%,-100%);
+    z-index: 100;
+    width: 100vh;
+    height: 100vh;
+    /* border-radius: 50%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10rem 3rem;
+    background: radial-gradient(circle at 50% -10%,rgba(252, 81, 12, 0.9080225840336135) 24%,rgba(239,77,11,0.3113839285714286) 42.3%, rgba(0, 0, 0, 0) 100%);
+    background-color: rgb(246, 178, 152);
   }
 }

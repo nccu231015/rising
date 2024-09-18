@@ -1,9 +1,29 @@
 
 .main{
+  z-index: 1;
   width: 100vw;
   height: 100vh;
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1)
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   /* background: darkblue; */
+}
+
+.phonecontactmenu{
+  display: none;
+}
+
+.contact{
+  display: none;
+  position: absolute;
+  background: rgba(141, 140, 140, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
+  border-radius: 15px; /* Optional rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 400;
 }
 
 @keyframes backgroundGradient {
@@ -28,6 +48,63 @@
   border: 1px solid white;
 }
 
+.ballright{
+  transform: translate(50%,-50%);
+}
+
+.ballcontact{
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  /* border-radius: 80%; */
+  /* background:rgb(252,81,12); */
+  background: radial-gradient(circle at 100% 50%,rgba(252, 81, 12, 0.9080225840336135) 24%,rgba(239,77,11,0.3113839285714286) 42.3%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%,-50%);
+  /* box-shadow: 0 0 15px 10px rgba(0,0,0,0.1); */
+  /* border: transparent */
+  /* animation: 10s infinite ease ballbreathing; */
+  transform-origin: 0 50%
+}
+
+.ballcontact .info{
+  font-family: 'Martel',sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  left: 80%;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.element + .element{
+  margin-top: 2rem;
+}
+
+.logocontainer{
+  display: flex;
+}
+
+.logo + .logo{
+  margin-left: 1rem;
+}
+
+.logo{
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: black;
+  /* padding: 2rem; */
+  color: white;
+}
 .ball{
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   z-index: 200;
@@ -46,8 +123,24 @@
   transform-origin: 0 50%
 }
 
+@keyframes on {
+  0%{
+    opacity: 0
+  }
+  100%{
+    opacity: 1
+  }
+}
+
+.offcontact{
+  animation: on 1s reverse;
+}
+.oncontact{
+  animation: on 1s ease;
+}
 
 .photo{
+  animation: on 1s ease;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   z-index: 5;
   user-select: none;
@@ -63,6 +156,7 @@
 }
 
 .title{
+  animation: on 1s ease;
   user-select: none;
   cursor: pointer;
   font-family: 'Martel', serif;
@@ -76,7 +170,6 @@
   text-decoration: underline;
   text-underline-offset: 0.5rem;
   margin-top: 1rem;
-  z-index: 10;
   /* margin-top: 1rem; */
   /* border: 1px solid white */
 }
@@ -120,7 +213,12 @@
   cursor: pointer;
 }
 
+.shader{
+  animation: on 5s ease;
+}
+
 .slogan{
+  animation: on 1s ease;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   user-select: none;
   font-family: 'Martel', serif;
@@ -129,11 +227,12 @@
     margin-top: 1.5rem;
     font-size: 6rem;
     line-height: 11vh;
-    color: transparent;
+    
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateY(-50%) translateX(-80%);
+    color: transparent;
     -webkit-text-stroke: #DE5A24 1px;
     z-index: 5;
 }
@@ -226,6 +325,16 @@
     margin-top: 0.1rem;
   }
 
+  .logo{
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .logocontainer{
+    position: relative;
+    left: 6px
+  }
+
   .items:nth-child(1){
     margin-top: 3rem;
   }
@@ -234,6 +343,8 @@
     cursor: pointer;
     width: 7%;
     height: 20%;
+    position: relative;
+      top: -20%;
     /* border: 1px solid black; */
     display: flex;
     align-items: center;
@@ -272,6 +383,48 @@
     top: 0;
     left: 0;
     background: blue;
+  }
+
+  .phonecontactmenu{
+    display: inline-block;
+    transition: 1s ease;
+    transform: translate(50%,-100%);
+    z-index: 100;
+    width: 100vh;
+    height: 100vh;
+    /* border-radius: 50%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10rem 3rem;
+    background: radial-gradient(circle at 50% -10%,rgba(252, 81, 12, 0.9080225840336135) 24%,rgba(239,77,11,0.3113839285714286) 42.3%, rgba(0, 0, 0, 0) 100%);
+    background-color: rgb(246, 178, 152);
+  }
+
+  .element{
+    font-family: "Martel", sans-serif;
+    font-weight: bold;
+  }
+
+  .contactitems{
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .elementphone{
+    position: relative;
+    top: -5rem;
+  }
+
+  .sayhi{
+    position: relative;
+    left: -6px;
+    font-size: 7rem;
+    color: transparent;
+    -webkit-text-stroke: #DE5A24 1px;
+    font-weight: 900;
+    font-family: "Martel", sans-serif;
+    line-height: 8rem;
   }
 
 }

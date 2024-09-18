@@ -9,8 +9,17 @@ import { ShaderGradientCanvas, ShaderGradient } from "shadergradient";
 import * as reactSpring from "@react-spring/three";
 import * as drei from "@react-three/drei";
 import * as fiber from "@react-three/fiber";
+import { builder } from '@builder.io/sdk'
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { BsInstagram } from "react-icons/bs";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa6";
+
+builder.init('7a596d2f1f274a12883ae46ef1b455cd')
 
 export default function Projects() {
+  const router = useRouter();
   const [items, setitems] = useState([
     ["Tester1", "2001", exampleimg],
     ["Tester2", "2001", exampleimg],
@@ -33,14 +42,22 @@ export default function Projects() {
   const [Images, setImages] = useState(null);
   const [Transition, setTransition] = useState(false);
 
+  const [project,setproject] =useState([]);
+
   const isScrolling = useRef(false);
   const scrollEvent = useRef(null);
+
+  builder.get('projects').promise().then(({ data }) => {
+    setproject(data.project)
+  })
+  
 
   useEffect(() => {
     let imageprev, imagenext;
 
     if ((scrollIndex - 1 >= 0) & !Transition) {
       imageprev = document.getElementById(`image${scrollIndex - 1}`);
+      if(imageprev != undefined){
       if (imageprev.classList.contains(styles.photoanimationup)) {
         imageprev.classList.remove(styles.photoanimationup);
         imageprev.classList.add(styles.photoanimationdown);
@@ -50,8 +67,10 @@ export default function Projects() {
         // }, 500);
       }
     }
+    }
     if ((scrollIndex + 1 < items.length) & !Transition) {
       imagenext = document.getElementById(`image${scrollIndex + 1}`);
+      if(imagenext !=undefined){
       if (imagenext.classList.contains(styles.photoanimationup)) {
         imagenext.classList.remove(styles.photoanimationup);
         imagenext.classList.add(styles.photoanimationdown);
@@ -60,6 +79,7 @@ export default function Projects() {
         //   imagenext.style.opacity = 0;
         // }, 500);
       }
+    }
     }
   }, [scrollIndex]);
 
@@ -83,11 +103,23 @@ export default function Projects() {
     }, 300);
   };
 
-  const menuoff = (event) => {
+  const contactmenuon = () => {
+    const pmenu = document.getElementById("phonecontactmenu");
+    pmenu.style.transform = "translate(0%,0%)";
+    setTimeout(() => {
+      pmenu.style.borderRadius = 0;
+    }, 300);
+  };
+
+  const menuoff = () => {
     const pmenu = document.getElementById("phonemenu");
+    const pcmenu = document.getElementById("phonecontactmenu");
     pmenu.style.transform = "translate(50%,-100%)";
     pmenu.style.borderRadius = "50%";
+    pcmenu.style.transform = "translate(50%,-100%)";
+    pcmenu.style.borderRadius = "50%";
   };
+
   //   };
 
   const handleScroll = (event) => {
@@ -112,7 +144,7 @@ export default function Projects() {
       setscrollIndex((prevIndex) => Math.max(prevIndex - 1, 0));
     }
     // const Imagenew = document.getElementById(`container${scrollIndex}`);
-    // Imagenew.style.zIndex = currentZ;
+    // Imagenew.style.zIndex = currentZ; 
 
     scrollEvent.current = setTimeout(() => {
       isScrolling.current = false;
@@ -141,6 +173,7 @@ export default function Projects() {
 
   return (
     <div className={styles.screen}>
+    <div className={styles.main} id="main"></div>
       <ShaderGradientCanvas
         importedfiber={{ ...fiber, ...drei, ...reactSpring }}
         style={{
@@ -151,7 +184,8 @@ export default function Projects() {
       >
         <ShaderGradient
           control="query"
-          urlString="https://www.shadergradient.co/customize?animate=on&axesHelper=off&brightness=3.7&cAzimuthAngle=240&cDistance=160&cPolarAngle=130&cameraZoom=16&color1=%23ffd4cc&color2=%23ff6000&color3=%23ffefe0&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=5&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=20&positionX=0.2&positionY=0.3&positionZ=0.1&range=enabled&rangeEnd=37.5&rangeStart=25.5&reflection=0.1&rotationX=20&rotationY=50&rotationZ=140&shader=defaults&toggleAxis=true&type=sphere&uAmplitude=2.4&uDensity=0.8&uFrequency=0&uSpeed=0.1&uStrength=0.5&uTime=25.5&wireframe=false&zoomOut=false&noiseStrength=0.2"
+          
+          urlString="https://www.shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%23000000&bgColor2=%23000000&brightness=3.7&cAzimuthAngle=240&cDistance=160&cPolarAngle=130&cameraZoom=16&color1=%23ffd4cc&color2=%23ff6000&color3=%23ffefe0&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=5&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&noiseStrength=0.2&pixelDensity=20&positionX=0.2&positionY=0.3&positionZ=0.1&range=disabled&rangeEnd=37.5&rangeStart=27.3&reflection=0.1&rotationX=20&rotationY=50&rotationZ=140&shader=defaults&toggleAxis=false&type=sphere&uAmplitude=2.4&uDensity=0.8&uFrequency=0&uSpeed=0.1&uStrength=0.5&uTime=27.3&wireframe=false&zoomOut=false"
         />
       </ShaderGradientCanvas>
       <div className={styles.menuicon} onClick={menuon}>
@@ -161,38 +195,130 @@ export default function Projects() {
       <div className={styles.phoneprojects}>
         <div className={styles.upgradient}></div>
         <div className={styles.downgradient}></div>
-
-        <Image
-          className={styles.imagephone}
-          src={exampleimg}
-          width={0}
-          height={0}
-        />
+        <div className={styles.phoneimagecarasoul} style={{width:`${project.length*100}vw`}}>
+          {project.map((item,index)=>{return(
+            <div key={index} className={styles.phoneimagecontainer} onClick={()=>{
+                router.push(`/${item.projectname}`)
+            }}>
+              <Image
+              className={styles.imagephone}
+              src={item.photo}
+              quality={100}
+              fill
+              objectFit="cover"
+            />
+          </div>
+          )
+          })}
+        </div>
       </div>
       <div className={styles.phonemenumain} id="phonemenu">
         <div className={styles.detectionarea} onMouseDown={menuoff}>
           <div className={styles.circle}></div>
           <div className={styles.back} onMouseDown={menuoff}></div>
         </div>
-        <div className={styles.items}>HOME</div>
-        <div className={styles.items}>PROJECTS</div>
-        <div className={styles.items}>CONTACT</div>
+        <div className={styles.items} onClick={()=>{
+          router.push('/')
+        }}>HOME</div>
+        <div className={styles.items} onClick={()=>{
+          router.push('/projects')
+        }}>PROJECTS</div>
+         <div className={styles.items} onMouseDown={contactmenuon}>CONTACT</div>
+        <div className={`${styles.items} ${styles.logocontainer}`}>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <BsInstagram ></BsInstagram>
+              </Link>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <FaLinkedinIn></FaLinkedinIn>
+              </Link>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <FaMedium></FaMedium>
+              </Link>
+            </div>
+      </div>
+
+      <div className={`${styles.phonecontactmenu}`} id="phonecontactmenu">
+        <div className={styles.detectionarea} onMouseDown={menuoff}>
+          <div className={styles.circle}></div>
+          <div className={styles.back} onMouseDown={menuoff}></div>
+        </div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> rising@risinglai.com</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> 86412469</div>
+        
+        <div className={`${styles.contactitems} ${styles.elementphone}`}>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <BsInstagram ></BsInstagram>
+              </Link>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <FaLinkedinIn></FaLinkedinIn>
+              </Link>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <FaMedium></FaMedium>
+              </Link>
+            </div>
+
+            <div className={styles.sayhi}>
+              SAY<br/>HI
+            </div>
+      </div>
+
+      <div className={styles.contact} id="contact" onClick={()=>{
+        const contact = document.getElementById("contact");
+        contact.classList.add(styles.offcontact);
+        setTimeout(()=>{
+          contact.style.display= "none";
+          contact.classList.remove(styles.offcontact);
+        },1000)
+      }}>
+        <div className={styles.ballcontact} style={{transform:"translate(-50%,-50%)"}}>
+          <div className={styles.info}>
+            <div className={styles.element}>Email: <br/> rising@risinglai.com</div>
+            <div className={styles.element}>Call: <br/> 86412469</div>
+            <div className={`${styles.element} ${styles.logocontainer}`}>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <BsInstagram ></BsInstagram>
+              </Link>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <FaLinkedinIn></FaLinkedinIn>
+              </Link>
+              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+                <FaMedium></FaMedium>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={styles.ball}></div>
       {/* <div className={styles.lines}></div> */}
-      <div className={styles.title}>design by Rising Lai</div>
+      <div className={styles.title} onClick={()=>{
+         const main = document.getElementById("main");
+             main.style.display="inline-block"
+             main.classList.add(styles.backhome)
+             setTimeout(()=>{
+              main.style.opacity=1
+              router.push('/')
+             },1000)
+      }}>design by Rising Lai</div>
       <div className={styles.menu}>
         <div className={styles.projectsMenu}  style={{ opacity: 0 }}>P</div>
-        <div className={styles.ContactMenu}>C</div>
+        <div className={styles.ContactMenu} onClick={()=>{
+           const contact = document.getElementById("contact");
+           contact.style.display = "inline-block";
+            contact.classList.add(styles.oncontact);
+          setTimeout(()=>{
+            contact.style.opacity = 1;
+            contact.classList.remove(styles.oncontact);
+          },1000)
+        }}>C</div>
       </div>
       <div
         className={styles.sphere_menu}
         style={{ transform: `translateY(${deltaYMenu}%)` }}
       >
-        {items.map((i, index) => {
-          const angle = (index - scrollIndex) * 5;
-          const position = -Math.abs((index - scrollIndex) * 50);
+        {project.map((i, index) => {
+          const angle = (index - scrollIndex) * 6;
+          const position = -Math.abs((index - scrollIndex) * 20);
           return (
             <div
               id={`container${index}`}
@@ -247,24 +373,31 @@ export default function Projects() {
                     .getElementById(`container${index}`)
                     .getBoundingClientRect();
                   images.style.removeProperty("transform");
-                  images.style.transform = `translate(-${rect.left}px, -${rect.top}px)`;
+                  images.style.transform = `translate(-${rect.left+32}px, -${rect.top+32}px)`;
                   images.style.transitionDuration = "2s";
                   images.style.position = "absolute";
                   images.style.width = "100vw";
                   images.style.height = "100vh";
                   setTransition(true);
+                  const newurl = i.projectname.replace(/\s+/g, '-').toLowerCase();
+                  setTimeout(()=>{
+                    router.push(`/${newurl}`)
+                  },2000)
                 }
               }}
             >
+            <div className={styles.imagecontainer}>
               <Image
                 id={`image${index}`}
                 className={styles.image}
-                src={i[2]}
-                width="0"
-                height="0"
+                src={i.photo}
+                quality={100}
+                fill
+                objectFit="cover"
               />
+            </div>
               <div style={{ position: "relative" }}>
-                {i[0]} <span className={styles.year}> {i[1]} </span>
+                {i.projectname} <span className={styles.year}> {i.year} </span>
               </div>
             </div>
           );

@@ -1,12 +1,64 @@
-"use client"
 import style from "./style.module.css";
-import exampleimg from "../../src/risingphoto.PNG";
 import Image from "next/image";
-export default function VerticleParagraphPicture(){
-    return(
-        <div className={style.paragraphimage}>
-            <div className={style.paragraphtwocolumn}><div className={style.title}>AAAAAAA</div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore e laudantium, totam rem aperiam, eao.</div>
-            <Image style={{flex:0.5}}  src={exampleimg} width={0} height={0} className={style.images, style.imageright}></Image>
-        </div>
-    )
+
+export default function ParagraphPicture(props) {
+  return (
+    <div className={style.paragraphimage}>
+     <div className={style.imageContainerPhone} style={{height:"70vh"}}>
+        <Image
+          src={props.image}
+          layout="fill"  // Fill the container
+          quality={100}  // Maintain high quality
+          objectFit="cover"  // Keep the aspect ratio and ensure no distortion
+          className={`${style.images} ${style.imageright}`}
+          alt="example image"
+        />
+    </div>
+      <div className={style.paragraphtwocolumn}>
+        <div className={style.title}>{props.title}</div>
+        <div dangerouslySetInnerHTML={{ __html: props.Description }} ></div>
+      </div>
+      <div id={`${props.builderBlock.id}-imageblock`} className={style.imageContainer} style={{marginLeft:"4rem"}} 
+      onMouseEnter={(event)=>{
+            const description = document.getElementById(props.builderBlock.id)
+            description.classList.add(style.oncontact)
+            setTimeout(()=>{
+                description.style.opacity = 1
+                description.classList.remove(style.oncontact)
+            },500)
+           
+            
+      }}
+      onMouseMove={(event)=>{
+        const description = document.getElementById(props.builderBlock.id)
+        const rect = document
+                    .getElementById(`${props.builderBlock.id}-imageblock`)
+                    .getBoundingClientRect();
+
+        console.log(description)
+        description.style.transform = `translate(${event.clientX - rect.left}px, ${event.clientY - rect.top}px)`
+      }}
+      onMouseLeave={(event)=>{
+        const description = document.getElementById(props.builderBlock.id)
+        description.classList.add(style.offcontact)
+        setTimeout(()=>{
+            description.style.opacity = 0
+            description.classList.remove(style.offcontact)
+        },500)
+       
+      }}
+      >
+        <Image
+          src={props.image}
+          layout="fill"  // Fill the container
+          quality={100}  // Maintain high quality
+          objectFit="cover"  // Keep the aspect ratio and ensure no distortion
+          className={`${style.images} ${style.imageright}`}
+          alt="example image"
+        />
+
+<div className={style.imagedescription} id={props.builderBlock.id}> {props.imagedescription}</div>
+      </div>
+    </div>
+  );
 }
