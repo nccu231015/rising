@@ -196,9 +196,11 @@ export default function Projects() {
         <div className={styles.upgradient}></div>
         <div className={styles.downgradient}></div>
         <div className={styles.phoneimagecarasoul} style={{width:`${project.length*100}vw`}}>
-          {project.map((item,index)=>{return(
+          {project.map((item,index)=>{
+            const newurl = item.projectname.replace(/\s+/g, '-').toLowerCase();
+            return(
             <div key={index} className={styles.phoneimagecontainer} onClick={()=>{
-                router.push(`/${item.projectname}`)
+                router.push(`/${newurl}`)
             }}>
               <Image
               className={styles.imagephone}
