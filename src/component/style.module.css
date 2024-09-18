@@ -176,6 +176,7 @@ font-weight: bold;
         height: 4vh;
         cursor: pointer;
     }
+   
 
 
     .paragraphimage {
@@ -219,4 +220,55 @@ font-weight: bold;
     width: 100%;
   }
     
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1.2em;
+  padding: 30px;
+}
+
+.place {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.place img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+.img_group {
+  position: relative;
+  cursor: pointer;
+}
+
+.cap {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+.place2 {
+  grid-row: span 3;
+  grid-column: span 2;
+}
+
+.place3, .place7, .place4, .place5 {
+  grid-row: span 2;
+  grid-column: span 2;
 }
