@@ -227,6 +227,7 @@ font-weight: bold;
   grid-auto-rows: minmax(100px, auto);
   gap: 1.2em;
   padding: 30px;
+  grid-auto-flow: dense
 }
 
 .place {
