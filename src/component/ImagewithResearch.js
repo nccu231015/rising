@@ -14,7 +14,7 @@ export default function ImagesWithResearch(props){
                 fill
                 objectFit="cover"></Image>
         </div>
-            <div className={style.paragraph}>{props.description}</div>
+            <div className={style.paragraph} dangerouslySetInnerHTML={{ __html: props.Description }}></div>
             <Link className={style.button} href={props.researchlink||""}>RESEARCH</Link>
         </div>
     )

@@ -7,12 +7,13 @@ export default function Images(props){
         <div className={style.video}>
         <div className={style.imageframe}>
             <Image 
+            className={style.imagesss}
             src={props.link}  
             quality={100}
                 fill
                 objectFit="cover"></Image>
         </div>
-            <div className={style.paragraph}>{props.description}</div>
+            <div className={style.paragraph} dangerouslySetInnerHTML={{ __html: props.Description }}></div>
         </div>
     )
 }
