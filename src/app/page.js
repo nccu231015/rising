@@ -5,7 +5,7 @@ import { ShaderGradientCanvas, ShaderGradient } from "shadergradient";
 import * as reactSpring from "@react-spring/three";
 import * as drei from "@react-three/drei";
 import * as fiber from "@react-three/fiber";
-import RSPhoto from "../risingphoto.jpg";
+import RSPhoto from "../risingphoto.JPG";
 import { useRef, useState, useEffect, Suspense } from "react";
 import LoadingScreen from "@/component/Loading";
 import { useRouter } from "next/navigation";
