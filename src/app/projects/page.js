@@ -19,6 +19,21 @@ import { FaMedium } from "react-icons/fa6";
 builder.init('7a596d2f1f274a12883ae46ef1b455cd')
 
 export default function Projects() {
+
+  const [basicinfo,setbasicinfo] = useState({
+    phone:"12345",
+    email:"1234",
+    iglink:"https://instagram.com",
+    linkedinlink: "https://instagram.com",
+    mediumlink: "https://instagram.com",
+  })
+
+  
+
+
+  const coverRefs = useRef([]); // Store references to each project cover
+  const [projectref, setProjectref] = useState([]);
+
   const router = useRouter();
   const [items, setitems] = useState([
     ["Tester1", "2001", exampleimg],
@@ -50,6 +65,8 @@ export default function Projects() {
   builder.get('projects').promise().then(({ data }) => {
     setproject(data.project)
   })
+
+ 
   
 
   useEffect(() => {
@@ -159,7 +176,55 @@ export default function Projects() {
     };
   }, [handleScroll]);
 
-  const deltaYMenu = -scrollIndex * 15;
+  useEffect(() => {
+    builder.get('projects').promise().then(({ data }) => {
+      setProjectref(data.project);
+    });
+
+    builder.get('basic-information').promise().then(({ data }) => {
+      setbasicinfo({
+        phone:data.phonenumber,
+        email:data.email,
+        iglink:data.instagramlink,
+        linkedinlink: data.linkedinlink,
+        mediumlink: data.mediumlink
+      })
+    })
+    console.log(basicinfo)
+  }, []);
+
+  useEffect(()=>{
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const coverElement = entry.target.querySelector(`.${styles.projectcover}`);
+          if (entry.isIntersecting) {
+            console.log("intersecting");
+            coverElement.style.opacity = '1'; // Fade in
+          } else {
+            coverElement.style.opacity = '0'; // Fade out
+          }
+        });
+      },
+      {
+        root: null, // Use viewport as root
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    // Observe each carousel image container
+    coverRefs.current.forEach((ref) => {
+      observer.observe(ref);
+    });
+
+    return () => {
+      // Cleanup the observer when the component unmounts
+      observer.disconnect();
+    };
+  },[projectref])
+
+  const deltaYMenu = -scrollIndex * 14;
 
   const mouseEnter = (i) => {
     if (i == scrollIndex) {
@@ -197,10 +262,14 @@ export default function Projects() {
         <div className={styles.downgradient}></div>
         <div className={styles.phoneimagecarasoul} style={{width:`${project.length*100}vw`}}>
           {project.map((item,index)=>{
-            const newurl = item.projectname.replace(/\s+/g, '-').toLowerCase();
+            const newurl = item.projectname
+                        .replace(/\s+/g, '-') // Replace spaces with hyphens
+                        .replace(/[&@#]/g, '') // Remove symbols like &, @, #
+                        .toLowerCase(); // Convert to lowercase
             return(
-            <div key={index} className={styles.phoneimagecontainer} onClick={()=>{
+            <div key={index} className={styles.phoneimagecontainer} ref={(el) => (coverRefs.current[index] = el)} onClick={()=>{
                 router.push(`/${newurl}`)
+               
             }}>
               <Image
               className={styles.imagephone}
@@ -209,6 +278,10 @@ export default function Projects() {
               fill
               objectFit="cover"
             />
+            <div className={styles.projectcover} >
+              <div className={styles.phoneprojectname}>{item.projectname}</div>
+              <div className={styles.phoneprojectyear}>{item.year}</div>
+            </div>
           </div>
           )
           })}
@@ -227,13 +300,13 @@ export default function Projects() {
         }}>PROJECTS</div>
          <div className={styles.items} onMouseDown={contactmenuon}>CONTACT</div>
         <div className={`${styles.items} ${styles.logocontainer}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -244,17 +317,17 @@ export default function Projects() {
           <div className={styles.circle}></div>
           <div className={styles.back} onMouseDown={menuoff}></div>
         </div>
-        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> rising@risinglai.com</div>
-        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> 86412469</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> {basicinfo.email}</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> {basicinfo.phone}</div>
         
         <div className={`${styles.contactitems} ${styles.elementphone}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -274,16 +347,16 @@ export default function Projects() {
       }}>
         <div className={styles.ballcontact} style={{transform:"translate(-50%,-50%)"}}>
           <div className={styles.info}>
-            <div className={styles.element}>Email: <br/> rising@risinglai.com</div>
-            <div className={styles.element}>Call: <br/> 86412469</div>
+            <div className={styles.element}>Email: <br/> {basicinfo.email}</div>
+            <div className={styles.element}>Call: <br/> {basicinfo.phone}</div>
             <div className={`${styles.element} ${styles.logocontainer}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -320,7 +393,7 @@ export default function Projects() {
       >
         {project.map((i, index) => {
           const angle = (index - scrollIndex) * 6;
-          const position = -Math.abs((index - scrollIndex) * 20);
+          const position = -Math.abs((index - scrollIndex) * 30);
           return (
             <div
               id={`container${index}`}
@@ -381,7 +454,10 @@ export default function Projects() {
                   images.style.width = "100vw";
                   images.style.height = "100vh";
                   setTransition(true);
-                  const newurl = i.projectname.replace(/\s+/g, '-').toLowerCase();
+                  const newurl = i.projectname
+                        .replace(/\s+/g, '-') // Replace spaces with hyphens
+                        .replace(/[&@#]/g, '') // Remove symbols like &, @, #
+                        .toLowerCase(); // Convert to lowercase
                   setTimeout(()=>{
                     router.push(`/${newurl}`)
                   },2000)

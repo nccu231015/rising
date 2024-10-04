@@ -5,7 +5,7 @@ import { ShaderGradientCanvas, ShaderGradient } from "shadergradient";
 import * as reactSpring from "@react-spring/three";
 import * as drei from "@react-three/drei";
 import * as fiber from "@react-three/fiber";
-import RSPhoto from "../risingphoto.PNG";
+import RSPhoto from "../risingphoto.jpg";
 import { useRef, useState, useEffect, Suspense } from "react";
 import LoadingScreen from "@/component/Loading";
 import { useRouter } from "next/navigation";
@@ -13,9 +13,20 @@ import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaMedium } from "react-icons/fa6";
 import Link from "next/link";
+import { builder } from "@builder.io/sdk";
 
+builder.init('7a596d2f1f274a12883ae46ef1b455cd')
 
 export default function Home() {
+  const [basicinfo,setbasicinfo] = useState({
+    image: RSPhoto,
+    phone:"12345",
+    email:"1234",
+    iglink:"https://instagram.com",
+    linkedinlink: "https://instagram.com",
+    mediumlink: "https://instagram.com",
+  })
+
   const router = useRouter();
   const lightref = useRef(null);
   const [angle, setAngle] = useState(-30);
@@ -55,6 +66,19 @@ export default function Home() {
     pcmenu.style.borderRadius = "50%";
   };
 
+  useEffect(()=>{
+    builder.get('basic-information').promise().then(({ data }) => {
+      setbasicinfo({
+        image:data.homepagepic,
+        phone:data.phonenumber,
+        email:data.email,
+        iglink:data.instagramlink,
+        linkedinlink: data.linkedinlink,
+        mediumlink: data.mediumlink
+      })
+    })
+
+  },[])
 
 
   return (
@@ -89,13 +113,16 @@ export default function Home() {
       <div className={styles.menuicon} onMouseDown={menuon}>
         ...
       </div>
+      <div className={styles.photo}>
       <Image
+      style={{borderRadius:"16px"}}
         id="image"
-        src={RSPhoto}
-        width={0}
-        height={0}
-        className={styles.photo}
+        src={basicinfo.image}
+        quality={100}
+        fill
+        objectFit="cover"
       ></Image>
+      </div>
       <div className={styles.title}>design by Rising Lai</div>
       <div className={styles.menu}>
         <div
@@ -144,13 +171,13 @@ export default function Home() {
         }}>PROJECTS</div>
         <div className={styles.items} onMouseDown={contactmenuon}>CONTACT</div>
         <div className={`${styles.items} ${styles.logocontainer}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -162,17 +189,17 @@ export default function Home() {
           <div className={styles.circle}></div>
           <div className={styles.back} onMouseDown={menuoff}></div>
         </div>
-        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> rising@risinglai.com</div>
-        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> 86412469</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> {basicinfo.email}</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> {basicinfo.phone}</div>
         
         <div className={`${styles.contactitems} ${styles.elementphone}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -195,16 +222,16 @@ export default function Home() {
       }}>
         <div className={styles.ballcontact} style={{transform:"translate(-50%,-50%)"}}>
           <div className={styles.info}>
-            <div className={styles.element}>Email: <br/> rising@risinglai.com</div>
-            <div className={styles.element}>Call: <br/> 86412469</div>
+            <div className={styles.element}>Email: <br/> {basicinfo.email}</div>
+            <div className={styles.element}>Call: <br/> {basicinfo.phone}</div>
             <div className={`${styles.element} ${styles.logocontainer}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>

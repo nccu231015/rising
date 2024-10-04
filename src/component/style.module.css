@@ -98,6 +98,19 @@
     font-family: 'Martel', serif;
 }
 
+.titlepuretext{
+  color: white;
+  font-size: 2rem;
+  font-family: 'Martel', serif;
+}
+
+
+.puretitlepuretext{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Martel', serif;
+}
 
 .videoframe{
     width: 100%;
@@ -112,8 +125,27 @@
     width: 80%;
     color: white;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: 'Martel', serif;
+}
+
+
+.puretextwrapper{
+  margin-top: 5rem;
+  padding: 0 10rem;
+}
+
+
+
+.puretextparagraph{
+
+   font-family: "IBM Plex Sans", sans-serif;
+   font-weight: normal;
+  color: white;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .button{
@@ -135,6 +167,7 @@ font-weight: bold;
 }
 
 .imageframe{
+  z-index: 5;
     position: relative;
     width: 80vw;
     height: 80vh;
@@ -147,6 +180,22 @@ font-weight: bold;
 }
 
 @media (max-width: 600px){
+  .puretextparagraph{
+    padding: 0 2rem;
+  }
+
+  .puretextwrapper{
+    padding: 0
+  }
+  .titlepuretext{
+    padding: 0 1rem;
+  }
+
+
+  .paragraph{
+    
+    padding: 0 1rem;
+  }
 
     .imageframe{
         top: 2rem;
@@ -162,7 +211,7 @@ font-weight: bold;
 
     .video{
         margin-top: -2rem;
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .videoframe{
@@ -176,6 +225,11 @@ font-weight: bold;
         height: 4vh;
         cursor: pointer;
     }
+
+    .puretextparagraph{
+     padding: 0 1rem;
+   }
+   
    
 
 
@@ -208,8 +262,17 @@ font-weight: bold;
     }
 
     .title{
-        top: -3rem;
+      position: relative;
+      font-size: 2rem;
+      /* display: block; */
+      line-height: 3rem;
     }
+
+    .decriptiontwocolumn{
+      margin-top: -3rem;
+      position: relative;
+    }
+
     .paragraphtwocolumn {
         width: 100%; /* Full width for text */
         text-align: left;
@@ -223,7 +286,7 @@ font-weight: bold;
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
   grid-auto-rows: minmax(100px, auto);
   gap: 1.2em;
   padding: 30px;
@@ -242,6 +305,7 @@ font-weight: bold;
   height: auto;
   border-radius: 10px;
 }
+
 
 
 

@@ -299,6 +299,11 @@
  /* Phone Mode */
 @media (max-width: 600px) {
 
+  .project{
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+  
     .coverimage {
         position: relative;
         width: 100%;

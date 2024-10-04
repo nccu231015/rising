@@ -16,7 +16,7 @@ export default function ParagraphPicture(props) {
     </div>
       <div className={style.paragraphtwocolumn}>
         <div className={style.title}>{props.title}</div>
-        <div dangerouslySetInnerHTML={{ __html: props.Description }} ></div>
+        <div className={style.decriptiontwocolumn} dangerouslySetInnerHTML={{ __html: props.Description }} ></div>
       </div>
       <div id={`${props.builderBlock.id}-imageblock`} className={style.imageContainer} style={{marginLeft:"4rem"}} 
       onMouseEnter={(event)=>{

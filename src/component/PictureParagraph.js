@@ -58,12 +58,9 @@ export default function ParagraphPicture(props) {
 <div className={style.imagedescription} id={props.builderBlock.id}> {props.imagedescription}</div>
       </div>
 
-
-
-
       <div className={style.paragraphtwocolumn}>
         <div className={style.title}>{props.title}</div>
-        {props.Description}
+        <div className={style.decriptiontwocolumn} dangerouslySetInnerHTML={{__html:props.Description}}></div>
       </div>
       
     </div>

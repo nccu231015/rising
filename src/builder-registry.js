@@ -12,6 +12,8 @@ import photo from "../src/risingphoto.PNG"
 import Images from "./component/Image";
 import ImagesWithResearch from "./component/ImagewithResearch";
 import Gallary from "./component/gallary";
+import Puretext from "./component/PureText";
+import PureTitle from "./component/PureTitle";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -260,7 +262,29 @@ Builder.registerComponent(VerticlePictureParagraph,{
   ]
 })
 
+Builder.registerComponent(Puretext,{
+  name: "純文字",
+  inputs:[
+    {
+      name: "texts",
+      type:"richText"
+    },{
+      name: "title",
+      type: "text"
+    }
+  ]
+})
 
+
+Builder.registerComponent(PureTitle,{
+  name:"純標題",
+  inputs:[
+    {
+      name: "title",
+      type: "text"
+    }
+  ]
+})
 Builder.registerComponent(Counter, {
   name: "Counter",
 });

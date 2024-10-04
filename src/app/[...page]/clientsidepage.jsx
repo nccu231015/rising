@@ -1,7 +1,7 @@
 // components/ClientSidePage.js
 "use client";
 
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import { RenderBuilderContent } from '../../components/builder';
 import styles from "./individual.module.css";
 import { ShaderGradientCanvas, ShaderGradient } from "shadergradient";
@@ -14,10 +14,20 @@ import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaMedium } from "react-icons/fa6";
 import Link from "next/link";
+import { BackSide } from 'three';
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
 const ClientSidePage = ({ content, builderModelName }) => {
+  const [basicinfo,setbasicinfo] = useState({
+    phone:"12345",
+    email:"1234",
+    iglink:"https://instagram.com",
+    linkedinlink: "https://instagram.com",
+    mediumlink: "https://instagram.com",
+  })
+
+ 
   const router = useRouter();
 
   const menuon = (event) => {
@@ -44,6 +54,20 @@ const ClientSidePage = ({ content, builderModelName }) => {
     pcmenu.style.transform = "translate(50%,-100%)";
     pcmenu.style.borderRadius = "50%";
   };
+
+  useEffect(()=>{
+    builder.get('basic-information').promise().then(({ data }) => {
+      setbasicinfo({
+        image:data.homepagepic,
+        phone:data.phonenumber,
+        email:data.email,
+        iglink:data.instagramlink,
+        linkedinlink: data.linkedinlink,
+        mediumlink: data.mediumlink
+      })
+    })
+  })
+
   return (
     <>
       <div className={styles.screen}>
@@ -110,16 +134,16 @@ const ClientSidePage = ({ content, builderModelName }) => {
       }}>
         <div className={styles.ballcontact} style={{transform:"translate(-50%,-50%)"}}>
           <div className={styles.info}>
-            <div className={styles.element}>Email: <br/> rising@risinglai.com</div>
-            <div className={styles.element}>Call: <br/> 86412469</div>
+            <div className={styles.element}>Email: <br/> {basicinfo.email}</div>
+            <div className={styles.element}>Call: <br/> {basicinfo.phone}</div>
             <div className={`${styles.element} ${styles.logocontainer}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink}target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -140,13 +164,13 @@ const ClientSidePage = ({ content, builderModelName }) => {
         }}>PROJECTS</div>
         <div className={styles.items} onMouseDown={contactmenuon}>CONTACT</div>
         <div className={`${styles.items} ${styles.logocontainer}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink}target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
@@ -157,17 +181,17 @@ const ClientSidePage = ({ content, builderModelName }) => {
           <div className={styles.circle}></div>
           <div className={styles.back} onMouseDown={menuoff}></div>
         </div>
-        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> rising@risinglai.com</div>
-        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> 86412469</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Email: <br/> {basicinfo.email}</div>
+        <div className={`${styles.element} ${styles.elementphone}`}>Call: <br/> {basicinfo.phone}</div>
         
         <div className={`${styles.contactitems} ${styles.elementphone}`}>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.iglink} target="_blank">
                 <BsInstagram ></BsInstagram>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.linkedinlink} target="_blank">
                 <FaLinkedinIn></FaLinkedinIn>
               </Link>
-              <Link className={styles.logo} href="https://instagram.com" target="_blank">
+              <Link className={styles.logo} href={basicinfo.mediumlink} target="_blank">
                 <FaMedium></FaMedium>
               </Link>
             </div>
