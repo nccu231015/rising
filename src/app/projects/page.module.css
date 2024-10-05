@@ -540,7 +540,7 @@
         width: 100%;
         height: 10%;
         position: absolute;
-        top: 90%;
+        bottom: -10%;
         /* border: 1px solid black; */
         background: linear-gradient(to top,rgba(252, 80, 12,0.75) 10%,rgba(247, 172, 142, 0.143) 80%, rgba(0, 0, 0, 0) 100%);
     }
