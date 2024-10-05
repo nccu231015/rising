@@ -12,7 +12,7 @@
 
 .contact{
     display: none;
-    position: absolute;
+    position: fixed;
     background: rgba(141, 140, 140, 0.3); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
@@ -32,7 +32,7 @@
     /* border-radius: 80%; */
     /* background:rgb(252,81,12); */
     background: radial-gradient(circle at 100% 50%,rgba(252, 81, 12, 0.9080225840336135) 24%,rgba(239,77,11,0.3113839285714286) 42.3%, rgba(0, 0, 0, 0) 100%);
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-150%,-50%);
@@ -276,6 +276,7 @@
   
   .phonemenumain{
     display: none;
+    position: fixed;
   }
   
   .menuicon{
@@ -389,7 +390,7 @@
       width: 100vh;
       height: 100vh;
       border-radius: 50%;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       padding: 10rem 3rem;
