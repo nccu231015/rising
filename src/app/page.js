@@ -14,6 +14,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaMedium } from "react-icons/fa6";
 import Link from "next/link";
 import { builder } from "@builder.io/sdk";
+import { FaRegArrowAltCircleDown } from "react-icons/fa";
 
 builder.init('7a596d2f1f274a12883ae46ef1b455cd')
 
@@ -156,7 +157,11 @@ export default function Home() {
       </div>
       <div className={styles.slogan} id="slogan">
         DIGS STORY <br></br> BEHIND <br></br> THE OBJECT
+        <div className={styles.cvbutton} onClick={()=>{
+          router.push('/cv')
+        }}><FaRegArrowAltCircleDown /><p style={{ marginLeft: "0.25rem"}}>GET MY CV</p></div>
       </div>
+      
 
       <div className={styles.phonemenumain} id="phonemenu">
         <div className={styles.detectionarea} onMouseDown={menuoff}>

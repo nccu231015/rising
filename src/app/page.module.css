@@ -1,4 +1,5 @@
 
+
 .main{
   z-index: 1;
   width: 100vw;
@@ -218,6 +219,9 @@
   animation: on 5s ease;
 }
 
+
+
+
 .slogan{
   animation: on 1s ease;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -235,8 +239,30 @@
     transform: translateY(-50%) translateX(-80%);
     color: transparent;
     -webkit-text-stroke: #DE5A24 1px;
-    z-index: 5;
+    z-index: 20;
 }
+
+
+.cvbutton{
+  line-height: 2rem;
+  margin-top: 1rem;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: fit-content;
+  position: relative;
+  border-radius: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 25;
+  background:rgb(222, 90, 36);
+}
+
 
 
 

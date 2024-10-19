@@ -108,7 +108,7 @@
 .puretitlepuretext{
   color: white;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'Martel', serif;
 }
 
@@ -182,6 +182,10 @@ font-weight: bold;
 @media (max-width: 600px){
   .puretextparagraph{
     padding: 0 2rem;
+  }
+
+  .puretitlepuretext{
+    font-size: 1.5rem;
   }
 
   .puretextwrapper{
