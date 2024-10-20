@@ -244,8 +244,9 @@
 
 
 .cvbutton{
+  cursor: pointer;
   line-height: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0 2rem;
   display: flex;
   justify-content: center;
