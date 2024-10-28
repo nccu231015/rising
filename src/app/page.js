@@ -159,7 +159,7 @@ export default function Home() {
         DIGS STORY <br></br> BEHIND <br></br> THE OBJECT
         <div className={styles.cvbutton} onClick={()=>{
           router.push('/cv')
-        }}><FaRegArrowAltCircleDown /><p style={{ marginLeft: "0.25rem"}}>GET MY CV</p></div>
+        }}><FaRegArrowAltCircleDown /><p style={{ marginLeft: "0.25rem"}}>ABOUT</p></div>
       </div>
       
 
