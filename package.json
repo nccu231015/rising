@@ -9,9 +9,6 @@
     "lint": "next lint",
      "postinstall": "npm install --force"
   },
- "engines": {
-  "node": "22.4.0"
-},
   "dependencies": {
     "@builder.io/dev-tools": "^1.0.17",
     "@builder.io/react": "^3.2.9",
