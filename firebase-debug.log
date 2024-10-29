@@ -1,0 +1,498 @@
+[debug] [2024-10-29T12:41:53.294Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:41:53.296Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:41:53.296Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:41:53.297Z] Platform:      darwin
+[debug] [2024-10-29T12:41:53.297Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:41:53.300Z] Time:          Tue Oct 29 2024 20:41:53 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:41:53.300Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:41:53.432Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:41:53.433Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:41:53.433Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:41:53.436Z] Checked if tokens are valid: false, expires at: 1730196284927
+[debug] [2024-10-29T12:41:53.437Z] Checked if tokens are valid: false, expires at: 1730196284927
+[debug] [2024-10-29T12:41:53.438Z] > refreshing access token with scopes: []
+[debug] [2024-10-29T12:41:53.440Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-29T12:41:53.442Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-29T12:41:54.260Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-10-29T12:41:54.263Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-29T12:41:54.277Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:41:54.280Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:41:54.280Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:41:55.865Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:41:55.869Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:41:55.870Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:41:55.870Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:41:55.871Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:41:56.639Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:41:56.639Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[debug] [2024-10-29T12:42:05.523Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:42:05.525Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:42:05.525Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:42:05.526Z] Platform:      darwin
+[debug] [2024-10-29T12:42:05.526Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:42:05.527Z] Time:          Tue Oct 29 2024 20:42:05 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:42:05.527Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:42:05.662Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:42:05.663Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:42:05.664Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:42:05.666Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:42:05.667Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:42:05.669Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:42:05.669Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:42:05.670Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:42:06.728Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:42:06.730Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:42:06.731Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:42:06.733Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:42:06.733Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:42:07.245Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:42:07.249Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:42:14.356Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:42:14.356Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:42:14.356Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:42:14.983Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:42:14.989Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:42:17.723Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/routes-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T12:45:05.193Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:45:05.195Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:45:05.195Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:45:05.195Z] Platform:      darwin
+[debug] [2024-10-29T12:45:05.196Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:45:05.197Z] Time:          Tue Oct 29 2024 20:45:05 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:45:05.197Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:45:05.332Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:45:05.333Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:45:05.334Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:45:05.335Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:45:05.337Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:45:05.338Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:45:05.339Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:45:05.340Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:45:05.969Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:45:05.972Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:45:05.973Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:45:05.977Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:45:05.978Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:45:06.631Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:45:06.633Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:45:13.774Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:45:13.774Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:45:13.774Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:45:14.321Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:45:14.327Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:45:16.291Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/routes-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T12:46:40.192Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:46:40.194Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:46:40.195Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:46:40.195Z] Platform:      darwin
+[debug] [2024-10-29T12:46:40.195Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:46:40.200Z] Time:          Tue Oct 29 2024 20:46:40 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:46:40.200Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:46:40.342Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:46:40.343Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:46:40.344Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:46:40.347Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:46:40.348Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:46:40.350Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:46:40.351Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:46:40.351Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:46:41.435Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:46:41.438Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:46:41.439Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:46:41.443Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:46:41.444Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:46:42.003Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:46:42.006Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:46:49.200Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:46:49.200Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:46:49.200Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:46:51.567Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:46:51.573Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:46:54.595Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/routes-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T12:47:56.657Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:47:56.659Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:47:56.659Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:47:56.660Z] Platform:      darwin
+[debug] [2024-10-29T12:47:56.660Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:47:56.661Z] Time:          Tue Oct 29 2024 20:47:56 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:47:56.661Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:47:56.796Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:47:56.797Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:47:56.798Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:47:56.799Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:47:56.800Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:47:56.802Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:47:56.803Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:47:56.803Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:47:57.966Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:47:57.970Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:47:57.971Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:47:57.974Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:47:57.977Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:47:58.851Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:47:58.853Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:48:06.322Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:48:06.322Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:48:06.322Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:48:06.908Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:48:06.914Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:48:08.903Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/routes-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T12:49:12.747Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:49:12.748Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:49:12.749Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:49:12.749Z] Platform:      darwin
+[debug] [2024-10-29T12:49:12.749Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:49:12.750Z] Time:          Tue Oct 29 2024 20:49:12 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:49:12.751Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:49:12.885Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:49:12.886Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:49:12.887Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:49:12.889Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:49:12.890Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:49:12.891Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:49:12.892Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:49:12.893Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:49:14.011Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:49:14.015Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:49:14.016Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:49:14.019Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:49:14.020Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:49:14.741Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:49:14.745Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:49:22.153Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:49:22.153Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:49:22.164Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:49:22.757Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:49:22.762Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:49:24.688Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/routes-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T12:54:13.261Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:54:13.263Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:54:13.263Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:54:13.264Z] Platform:      darwin
+[debug] [2024-10-29T12:54:13.264Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:54:13.265Z] Time:          Tue Oct 29 2024 20:54:13 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:54:13.265Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:54:13.401Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:54:13.403Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:54:13.403Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:54:13.406Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:54:13.407Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:54:13.409Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:54:13.409Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:54:13.410Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:54:14.634Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:54:14.637Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:54:14.639Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:54:14.642Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:54:14.643Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:54:15.231Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:54:15.235Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:54:22.624Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:54:22.624Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:54:22.624Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:54:23.521Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:54:23.526Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:54:25.559Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/routes-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T12:55:23.511Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T12:55:23.513Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T12:55:23.513Z] CLI Version:   13.23.0
+[debug] [2024-10-29T12:55:23.513Z] Platform:      darwin
+[debug] [2024-10-29T12:55:23.514Z] Node Version:  v18.5.0
+[debug] [2024-10-29T12:55:23.515Z] Time:          Tue Oct 29 2024 20:55:23 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T12:55:23.515Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T12:55:23.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T12:55:23.649Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T12:55:23.650Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T12:55:23.652Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:55:23.654Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:55:23.655Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T12:55:23.656Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T12:55:23.657Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:55:24.811Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T12:55:24.814Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T12:55:24.816Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:55:24.818Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:55:24.819Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T12:55:25.367Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T12:55:25.375Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T12:55:33.415Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:55:33.415Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T12:55:33.415Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T12:55:33.938Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T12:55:33.943Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T12:55:36.201Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/server/middleware-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T13:09:23.361Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T13:09:23.363Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T13:09:23.363Z] CLI Version:   13.23.0
+[debug] [2024-10-29T13:09:23.363Z] Platform:      darwin
+[debug] [2024-10-29T13:09:23.364Z] Node Version:  v18.5.0
+[debug] [2024-10-29T13:09:23.367Z] Time:          Tue Oct 29 2024 21:09:23 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T13:09:23.367Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T13:09:23.499Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T13:09:23.501Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T13:09:23.501Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T13:09:23.504Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:23.505Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:23.507Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T13:09:23.507Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T13:09:23.508Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T13:09:26.635Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T13:09:26.638Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T13:09:26.639Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:26.642Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:26.642Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T13:09:27.861Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T13:09:27.865Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T13:09:35.074Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:35.078Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:35.078Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T13:09:37.731Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T13:09:37.734Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • use of revalidate /projects
+[info]  • non-static component /[...page]/page
+[info] 
+[debug] [2024-10-29T13:09:40.299Z] skipping /projects due to revalidate
+[debug] [2024-10-29T13:09:47.510Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:47.511Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:09:47.512Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T13:09:48.653Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T13:09:48.659Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[debug] [2024-10-29T13:10:32.314Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:820:11)
+    at Object.execSync (node:child_process:891:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:371:42)
+    at async deploy (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:58:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T13:10:36.313Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T13:10:36.315Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T13:10:36.315Z] CLI Version:   13.23.0
+[debug] [2024-10-29T13:10:36.315Z] Platform:      darwin
+[debug] [2024-10-29T13:10:36.316Z] Node Version:  v18.5.0
+[debug] [2024-10-29T13:10:36.317Z] Time:          Tue Oct 29 2024 21:10:36 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T13:10:36.317Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T13:10:36.450Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T13:10:36.451Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T13:10:36.452Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T13:10:36.453Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:36.455Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:36.456Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T13:10:36.457Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T13:10:36.458Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T13:10:38.292Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T13:10:38.296Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T13:10:38.297Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:38.300Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:38.301Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T13:10:39.130Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T13:10:39.132Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T13:10:46.202Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:46.215Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:46.216Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T13:10:49.692Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T13:10:49.698Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • use of revalidate /projects
+[info]  • non-static component /[...page]/page
+[info] 
+[debug] [2024-10-29T13:10:52.196Z] skipping /projects due to revalidate
+[debug] [2024-10-29T13:10:55.553Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:55.553Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:10:55.554Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T13:10:56.240Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T13:10:56.240Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[debug] [2024-10-29T13:10:59.479Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:820:11)
+    at Object.execSync (node:child_process:891:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:371:42)
+    at async deploy (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:58:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-29T13:11:33.705Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T13:11:33.707Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-10-29T13:11:33.707Z] CLI Version:   13.23.0
+[debug] [2024-10-29T13:11:33.707Z] Platform:      darwin
+[debug] [2024-10-29T13:11:33.708Z] Node Version:  v18.5.0
+[debug] [2024-10-29T13:11:33.709Z] Time:          Tue Oct 29 2024 21:11:33 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T13:11:33.709Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T13:11:33.842Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T13:11:33.842Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[debug] [2024-10-29T13:11:33.843Z] [iam] checking project rising-profolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-29T13:11:33.845Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:11:33.846Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:11:33.848Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions [none]
+[debug] [2024-10-29T13:11:33.848Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions x-goog-quota-user=projects/rising-profolio
+[debug] [2024-10-29T13:11:33.849Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T13:11:37.294Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions 200
+[debug] [2024-10-29T13:11:37.297Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rising-profolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-29T13:11:37.299Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:11:37.302Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:11:37.303Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio [none]
+[debug] [2024-10-29T13:11:39.015Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio 200
+[debug] [2024-10-29T13:11:39.019Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rising-profolio {"projectId":"rising-profolio","projectNumber":"415388843450","displayName":"Rising Profolio","name":"projects/rising-profolio","resources":{"hostingSite":"rising-profolio"},"state":"ACTIVE","etag":"1_3f959b90-d4ef-4084-aef5-6028260a9302"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-10-29T13:11:46.484Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:11:46.487Z] Checked if tokens are valid: true, expires at: 1730209313263
+[debug] [2024-10-29T13:11:46.487Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio [none]
+[debug] [2024-10-29T13:11:49.320Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio 200
+[debug] [2024-10-29T13:11:49.322Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/rising-profolio/sites/rising-profolio {"name":"projects/rising-profolio/sites/rising-profolio","defaultUrl":"https://rising-profolio.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-10-29T13:11:53.167Z] Error: ENOENT: no such file or directory, open '/Users/hshiungdaniel/Desktop/rising/.next/server/middleware-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.

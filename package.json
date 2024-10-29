@@ -6,8 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+     "postinstall": "npm install --force"
   },
+ "engines": {
+  "node": "22.4.0"
+},
   "dependencies": {
     "@builder.io/dev-tools": "^1.0.17",
     "@builder.io/react": "^3.2.9",
@@ -20,7 +24,7 @@
     "framer-motion": "^10.9.2",
     "glsl-random": "^0.0.5",
     "gsap": "^3.12.5",
-    "next": "^14.2.4",
+    "next": "^14.2.16",
     "pixi.js": "^8.3.4",
     "react": "^18",
     "react-dom": "^18",

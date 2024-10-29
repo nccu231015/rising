@@ -9,7 +9,7 @@ import RSPhoto from "../risingphoto.JPG";
 import { useRef, useState, useEffect, Suspense } from "react";
 import LoadingScreen from "@/component/Loading";
 import { useRouter } from "next/navigation";
-import { BsInstagram } from "react-icons/bs";
+import { BsArrowRightCircle, BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaMedium } from "react-icons/fa6";
 import Link from "next/link";
@@ -159,7 +159,7 @@ export default function Home() {
         DIGS STORY <br></br> BEHIND <br></br> THE OBJECT
         <div className={styles.cvbutton} onClick={()=>{
           router.push('/cv')
-        }}><FaRegArrowAltCircleDown /><p style={{ marginLeft: "0.25rem"}}>ABOUT</p></div>
+        }}><BsArrowRightCircle /><p style={{ marginLeft: "0.25rem"}}>ABOUT</p></div>
       </div>
       
 

@@ -1,0 +1,104 @@
+[debug] [2024-10-29T08:59:38.204Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T08:59:38.206Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init hosting
+[debug] [2024-10-29T08:59:38.206Z] CLI Version:   13.23.0
+[debug] [2024-10-29T08:59:38.206Z] Platform:      darwin
+[debug] [2024-10-29T08:59:38.207Z] Node Version:  v18.5.0
+[debug] [2024-10-29T08:59:38.208Z] Time:          Tue Oct 29 2024 16:59:38 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T08:59:38.208Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T08:59:38.217Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T08:59:38.219Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/hshiungdaniel/Desktop/rising
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-10-29T08:59:42.537Z] Checked if tokens are valid: false, expires at: 1730193087983
+[debug] [2024-10-29T08:59:42.541Z] Checked if tokens are valid: false, expires at: 1730193087983
+[debug] [2024-10-29T08:59:42.542Z] > refreshing access token with scopes: []
+[debug] [2024-10-29T08:59:42.545Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-29T08:59:42.548Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-29T08:59:42.592Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------746161613815059158550842","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo ENOTFOUND www.googleapis.com
+[debug] [2024-10-29T08:59:42.594Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-10-29T08:59:42.603Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/auth.js:141:12)
+    at refreshTokens (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/auth.js:527:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAccessToken (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:42:18)
+    at async Client.addAuthHeader (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:169:21)
+    at async Client.request (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:120:34)
+    at async getProjectPage (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/management/projects.js:238:17)
+    at async getFirebaseProjectPage (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/management/projects.js:255:23)
+    at async selectProjectInteractively (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/management/projects.js:94:41)
+    at async doSetup (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/init/features/project.js:88:27)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2024-10-29T09:00:02.227Z] ----------------------------------------------------------------------
+[debug] [2024-10-29T09:00:02.229Z] Command:       /usr/local/bin/firebase /Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2024-10-29T09:00:02.229Z] CLI Version:   13.23.0
+[debug] [2024-10-29T09:00:02.229Z] Platform:      darwin
+[debug] [2024-10-29T09:00:02.230Z] Node Version:  v18.5.0
+[debug] [2024-10-29T09:00:02.231Z] Time:          Tue Oct 29 2024 17:00:02 GMT+0800 (Taipei Standard Time)
+[debug] [2024-10-29T09:00:02.231Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-29T09:00:02.241Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-29T09:00:02.242Z] > authorizing via signed-in user (risingprofolio@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/hshiungdaniel/Desktop/rising
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-10-29T09:00:26.441Z] Checked if tokens are valid: false, expires at: 1730193087983
+[debug] [2024-10-29T09:00:26.442Z] Checked if tokens are valid: false, expires at: 1730193087983
+[debug] [2024-10-29T09:00:26.443Z] > refreshing access token with scopes: []
+[debug] [2024-10-29T09:00:26.446Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-29T09:00:26.448Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-29T09:00:26.499Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------939505701538539374188848","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo ENOTFOUND www.googleapis.com
+[debug] [2024-10-29T09:00:26.500Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-10-29T09:00:26.508Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/auth.js:141:12)
+    at refreshTokens (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/auth.js:527:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAccessToken (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:42:18)
+    at async Client.addAuthHeader (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:169:21)
+    at async Client.request (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:120:34)
+    at async getProjectPage (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/management/projects.js:238:17)
+    at async getFirebaseProjectPage (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/management/projects.js:255:23)
+    at async selectProjectInteractively (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/management/projects.js:94:41)
+    at async doSetup (/Users/hshiungdaniel/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/init/features/project.js:88:27)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
